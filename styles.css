@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  height: 90vh;
+  background: #f0f1f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  border-radius: 15px;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(6, 6, 6, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 60%;
+  border-radius: 8px;
+  background: #dbd2fe;
+  transition: 0.3s all ease-in-out;
+}
+
+.box:nth-child(1):hover::before {
+  width: 100%;
+  height: 100%;
+  background: #e5e3eb;
+  z-index: 1;
+}
+
+.count-content {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.count-content label {
+  font-size: 14px;
+}
+
+.count-content .count {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.box-icon {
+  background: #ebe6fd;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.3s all ease-in-out;
+  z-index: 10;
+}
+
+.box:nth-child(1):hover .box-icon {
+  background: #886bfe;
+}
+
+.box-icon i {
+  color: #886bfe;
+}
+
+.box:nth-child(1):hover .box-icon i {
+  color: #ebe6fd;
+}
+
+.box:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  right: 8%;
+  width: 12%;
+  height: 34%;
+  border-radius: 8px;
+  background: #ebe6fd;
+  transition: 0.3s all ease-in-out;
+  z-index: 0;
+}
+
+/* .box-icon:nth-child(2):hover .box:nth-child(2)::after {
+  right: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+.box:nth-child(2):hover::after {
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.box:nth-child(2):hover::before {
+  background: #886bfe;
+  z-index: 20;
+}
